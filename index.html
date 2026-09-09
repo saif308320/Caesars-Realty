@@ -17,9 +17,18 @@
     display:flex;flex-direction:column;justify-content:center;
     max-width:560px;
   }
-  .hero-copy h1{font-size:3.1rem;line-height:1.08;}
+  .hero-eyebrow{
+    display:flex;align-items:center;gap:14px;
+    margin-bottom:28px;
+  }
+  .hero-eyebrow .bar{width:32px;height:1px;background:var(--gold);}
+  .hero-eyebrow span{font-size:0.8rem;color:var(--gold-soft);font-family:'Fraunces',serif;font-style:italic;}
+  .hero-copy h1{font-size:3.25rem;line-height:1.12;letter-spacing:-0.015em;}
   .hero-copy .gold-word{color:var(--gold-soft);}
-  .hero-copy p.lead{margin-top:24px;font-size:1.06rem;color:var(--stone);max-width:460px;}
+  .hero-copy p.lead{
+    margin-top:28px;font-size:1.08rem;color:var(--stone);max-width:460px;
+    padding-left:20px;border-left:1px solid var(--line);line-height:1.7;
+  }
   .hero-img{
     position:relative;overflow:hidden;
     background:#0a0f1a;
@@ -30,10 +39,18 @@
     background:linear-gradient(90deg, var(--ink) 0%, rgba(14,21,36,0.05) 22%);
   }
   .hero-address{
-    margin-top:36px;padding-top:24px;border-top:1px solid var(--line);
-    font-size:0.9rem;color:var(--stone);max-width:420px;
+    margin-top:40px;padding:24px 26px;
+    border:1px solid var(--line);
+    background:rgba(180,145,92,0.04);
+    font-size:0.9rem;color:var(--stone);max-width:440px;
+    position:relative;
   }
-  .hero-address strong{color:var(--white);font-weight:500;display:block;margin-bottom:6px;font-family:'Fraunces',serif;font-size:1rem;}
+  .hero-address::before{
+    content:'';position:absolute;top:-1px;left:-1px;width:22px;height:22px;
+    border-top:1px solid var(--gold);border-left:1px solid var(--gold);
+  }
+  .hero-address strong{color:var(--white);font-weight:500;display:block;margin-bottom:8px;font-family:'Fraunces',serif;font-size:1.02rem;}
+  .hero-address .addr-line{line-height:1.7;}
   .hero-cta{margin-top:36px;}
 
   /* stat strip */
@@ -127,22 +144,28 @@
       <a class="btn" href="tel:+923168940063">Call</a>
       <a class="btn solid" href="https://wa.me/923168940063" target="_blank">WhatsApp</a>
     </div>
+    <button class="mobile-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </div>
 </nav>
 
 <section class="hero">
   <div class="hero-copy">
+    <div class="hero-eyebrow"><span class="bar"></span><span>Shahra-e-Faisal, Karachi</span></div>
     <h1>Property advice for<br>people who don't have<br>time to get it wrong.</h1>
-    <p class="lead">We help buyers, sellers and investors move through Karachi's residential and commercial market with a small team, straight numbers, and a Shahra-e-Faisal office you can actually walk into.</p>
+    <p class="lead">We help buyers, sellers and investors move through Karachi's residential and commercial market with a small team, straight numbers, and an office you can actually walk into.</p>
     <div class="hero-cta contact-row">
       <a class="btn solid" href="https://wa.me/923168940063" target="_blank">Chat on WhatsApp</a>
       <a class="btn" href="listings.html">View Listings</a>
     </div>
     <div class="hero-address">
       <strong>Visit the office</strong>
-      Office #805, 8th Floor, Caesars Tower, Main Shahra-e-Faisal,<br>
-      Opp. Aisha Bawany Academy, Karachi Cantonment, Fowler Lines, Karachi<br>
-      +92 316 8940063
+      <div class="addr-line">
+        Office #805, 8th Floor, Caesars Tower, Main Shahra-e-Faisal,<br>
+        Opp. Aisha Bawany Academy, Karachi Cantonment, Fowler Lines, Karachi<br>
+        +92 316 8940063
+      </div>
     </div>
   </div>
   <div class="hero-img">
@@ -366,6 +389,17 @@
     </div>
   </div>
 </footer>
+
+<script>
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(){
+      var isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+  }
+</script>
 
 </body>
 </html>
