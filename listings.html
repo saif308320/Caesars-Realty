@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Listings — Caesars Realty</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .page-head{padding:72px 0 40px;border-bottom:1px solid var(--line);}
+  .page-head h1{font-size:2.6rem;max-width:600px;}
+  .page-head p{color:var(--stone);margin-top:18px;max-width:480px;}
+
+  .filters{display:flex;gap:12px;flex-wrap:wrap;padding:32px 0;border-bottom:1px solid var(--line);}
+  .chip{border:1px solid var(--line);color:var(--stone);padding:9px 18px;font-size:0.84rem;}
+  .chip.active{border-color:var(--gold);color:var(--gold-soft);}
+
+  .listing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:48px 0 100px;}
+  .listing-card{background:var(--ink-2);border:1px solid var(--line);}
+  .listing-card .thumb{height:220px;overflow:hidden;}
+  .listing-card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+  .listing-card:hover .thumb img{transform:scale(1.05);}
+  .listing-body{padding:22px 24px 26px;}
+  .listing-tag{font-size:0.72rem;letter-spacing:0.08em;color:var(--gold-soft);margin-bottom:10px;}
+  .listing-body h3{font-size:1.08rem;margin-bottom:8px;}
+  .listing-body p.loc{color:var(--stone);font-size:0.86rem;margin-bottom:14px;}
+  .listing-price{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--white);border-top:1px solid var(--line);padding-top:14px;margin-top:4px;display:flex;justify-content:space-between;align-items:center;}
+  .listing-price span.small{font-size:0.78rem;color:var(--stone);font-family:'Inter';}
+  .listing-cta{margin-top:16px;display:block;text-align:center;}
+
+  @media (max-width:900px){
+    .listing-grid{grid-template-columns:1fr;}
+    .page-head h1{font-size:2rem;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">Caesars Realty<small>KARACHI PROPERTY ADVISORS</small></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="listings.html" class="active">Listings</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn" href="tel:+923168940063">Call</a>
+      <a class="btn solid" href="https://wa.me/923168940063" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="page-head">
+    <h1>Current listings</h1>
+    <p>A working shortlist, not an archive — every unit below was checked by our team this month. Ask for the full PDF if you want papers and floor plans before a visit.</p>
+  </div>
+
+  <div class="filters">
+    <span class="chip active">All</span>
+    <span class="chip">Apartments</span>
+    <span class="chip">Houses</span>
+    <span class="chip">Commercial</span>
+    <span class="chip">For Rent</span>
+  </div>
+
+  <div class="listing-grid">
+
+    <div class="listing-card">
+      <div class="thumb"><img src="https://images.pexels.com/photos/34135423/pexels-photo-34135423/free-photo-of-modern-apartment-building-at-sunset.jpeg?auto=compress&w=800&h=600&dpr=1" alt="Apartment building at sunset"></div>
+      <div class="listing-body">
+        <div class="listing-tag">FOR SALE — APARTMENT</div>
+        <h3>3-Bed Residence, DHA Phase 8</h3>
+        <p class="loc">Emaar Crescent Bay, DHA Phase 8, Karachi</p>
+        <div class="listing-price">PKR 9.9 Crore <span class="small">2,400 sq.ft</span></div>
+        <a class="btn listing-cta" href="https://wa.me/923168940063?text=Hi%2C%20I%27m%20interested%20in%20the%203-Bed%20Residence%2C%20DHA%20Phase%208" target="_blank">Ask about this</a>
+      </div>
+    </div>
+
+    <div class="listing-card">
+      <div class="thumb"><img src="https://images.pexels.com/photos/259593/pexels-photo-259593.jpeg?auto=compress&w=800&h=600&dpr=1" alt="Villa exterior with driveway"></div>
+      <div class="listing-body">
+        <div class="listing-tag">FOR RENT — HOUSE</div>
+        <h3>5-Bed Villa, DHA Phase 6</h3>
+        <p class="loc">Darakhshan, DHA Phase 6, Karachi</p>
+        <div class="listing-price">PKR 3.0 Lakh <span class="small">/ month</span></div>
+        <a class="btn listing-cta" href="https://wa.me/923168940063?text=Hi%2C%20I%27m%20interested%20in%20the%205-Bed%20Villa%2C%20DHA%20Phase%206" target="_blank">Ask about this</a>
+      </div>
+    </div>
+
+    <div class="listing-card">
+      <div class="thumb"><img src="https://images.pexels.com/photos/2497641/pexels-photo-2497641.jpeg?auto=compress&w=800&h=600&dpr=1" alt="Modern commercial building facade"></div>
+      <div class="listing-body">
+        <div class="listing-tag">FOR SALE — COMMERCIAL</div>
+        <h3>Ground Floor Retail Space</h3>
+        <p class="loc">Al Murtaza Commercial, DHA Phase 8</p>
+        <div class="listing-price">PKR 9.0 Crore <span class="small">900 sq.ft</span></div>
+        <a class="btn listing-cta" href="https://wa.me/923168940063?text=Hi%2C%20I%27m%20interested%20in%20the%20Ground%20Floor%20Retail%20Space" target="_blank">Ask about this</a>
+      </div>
+    </div>
+
+    <div class="listing-card">
+      <div class="thumb"><img src="https://images.pexels.com/photos/5721942/pexels-photo-5721942.jpeg?auto=compress&w=800&h=600&dpr=1" alt="Apartment complex exterior"></div>
+      <div class="listing-body">
+        <div class="listing-tag">FOR SALE — APARTMENT</div>
+        <h3>4-Bed Flat, Askari 5</h3>
+        <p class="loc">Askari 5, Malir Cantonment, Karachi</p>
+        <div class="listing-price">PKR 4.8 Crore <span class="small">1,900 sq.ft</span></div>
+        <a class="btn listing-cta" href="https://wa.me/923168940063?text=Hi%2C%20I%27m%20interested%20in%20the%204-Bed%20Flat%2C%20Askari%205" target="_blank">Ask about this</a>
+      </div>
+    </div>
+
+    <div class="listing-card">
+      <div class="thumb"><img src="https://images.pexels.com/photos/209296/pexels-photo-209296.jpeg?auto=compress&w=800&h=600&dpr=1" alt="Suburban family house exterior"></div>
+      <div class="listing-body">
+        <div class="listing-tag">FOR RENT — HOUSE</div>
+        <h3>Bungalow, Shahra-e-Faisal</h3>
+        <p class="loc">Main Shahra-e-Faisal, Karachi</p>
+        <div class="listing-price">PKR 10.5 Lakh <span class="small">/ month</span></div>
+        <a class="btn listing-cta" href="https://wa.me/923168940063?text=Hi%2C%20I%27m%20interested%20in%20the%20Bungalow%2C%20Shahra-e-Faisal" target="_blank">Ask about this</a>
+      </div>
+    </div>
+
+    <div class="listing-card">
+      <div class="thumb"><img src="https://images.pexels.com/photos/4906392/pexels-photo-4906392.jpeg?auto=compress&w=800&h=600&dpr=1" alt="Residential apartment facade"></div>
+      <div class="listing-body">
+        <div class="listing-tag">FOR SALE — APARTMENT</div>
+        <h3>4-Bed Flat, Clifton Block 1</h3>
+        <p class="loc">Grand Monarch, Clifton, Karachi</p>
+        <div class="listing-price">PKR 9.77 Crore <span class="small">2,150 sq.ft</span></div>
+        <a class="btn listing-cta" href="https://wa.me/923168940063?text=Hi%2C%20I%27m%20interested%20in%20the%204-Bed%20Flat%2C%20Clifton%20Block%201" target="_blank">Ask about this</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>CAESARS REALTY</h4>
+        <p style="max-width:320px;">Office #805, 8th Floor, Caesars Tower, Main Shahra-e-Faisal, Opp. Aisha Bawany Academy, Karachi Cantonment, Fowler Lines, Karachi, Pakistan.</p>
+      </div>
+      <div>
+        <h4>CONTACT</h4>
+        <a href="tel:+923168940063">+92 316 8940063</a>
+        <a href="https://wa.me/923168940063" target="_blank">WhatsApp Chat</a>
+      </div>
+      <div>
+        <h4>PAGES</h4>
+        <a href="index.html">Home</a>
+        <a href="listings.html">Listings</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Caesars Realty, Karachi.</span>
+      <span>Fowler Lines, Karachi Cantonment</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+  --ink:#0E1524;
+  --ink-2:#151E33;
+  --line:#2B3550;
+  --gold:#B4915C;
+  --gold-soft:#D8C39C;
+  --bone:#F4F0E8;
+  --bone-2:#EAE3D3;
+  --stone:#8B93A6;
+  --white:#FFFFFF;
+  --radius: 2px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--bone);
+  font-family:'Inter',sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3,.display{
+  font-family:'Fraunces',serif;
+  font-weight:500;
+  letter-spacing:-0.01em;
+  margin:0;
+  color:var(--white);
+}
+
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+
+/* ---- Nav ---- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(14,21,36,0.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav .wrap{
+  display:flex;align-items:center;justify-content:space-between;
+  height:78px;
+}
+.brand{
+  font-family:'Fraunces',serif;
+  font-size:1.3rem;
+  color:var(--white);
+  display:flex;flex-direction:column;line-height:1.1;
+}
+.brand small{
+  font-family:'Inter',sans-serif;
+  font-size:0.62rem;
+  color:var(--gold-soft);
+  letter-spacing:0.14em;
+  margin-top:4px;
+}
+.nav-links{display:flex;gap:36px;font-size:0.92rem;color:var(--stone);}
+.nav-links a{padding:8px 0;border-bottom:1px solid transparent;transition:border-color .2s,color .2s;}
+.nav-links a:hover, .nav-links a.active{color:var(--gold-soft);border-color:var(--gold);}
+.nav-cta{
+  display:flex;gap:12px;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;
+  font-size:0.88rem;
+  border:1px solid var(--gold);
+  color:var(--gold-soft);
+  transition:background .2s, color .2s;
+  white-space:nowrap;
+}
+.btn:hover{background:var(--gold);color:var(--ink);}
+.btn.solid{background:var(--gold);color:var(--ink);}
+.btn.solid:hover{background:var(--gold-soft);border-color:var(--gold-soft);}
+
+.mobile-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.6rem;cursor:pointer;}
+
+/* ---- Footer ---- */
+footer{
+  background:var(--ink-2);
+  border-top:1px solid var(--line);
+  padding:64px 0 32px;
+  margin-top:120px;
+}
+.foot-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;
+  padding-bottom:40px;
+  border-bottom:1px solid var(--line);
+}
+.foot-grid h4{color:var(--gold-soft);font-size:0.78rem;letter-spacing:0.1em;margin-bottom:16px;font-family:'Inter';font-weight:600;}
+.foot-grid p, .foot-grid a{color:var(--stone);font-size:0.92rem;display:block;margin-bottom:10px;}
+.foot-grid a:hover{color:var(--gold-soft);}
+.foot-bottom{
+  padding-top:28px;display:flex;justify-content:space-between;
+  font-size:0.8rem;color:var(--stone);
+}
+
+@media (max-width:900px){
+  .nav-links{display:none;}
+  .mobile-toggle{display:block;}
+  .foot-grid{grid-template-columns:1fr;gap:32px;}
+  .foot-bottom{flex-direction:column;gap:8px;}
+}
+
+/* ---- Buttons row (WhatsApp / Call) reused across pages ---- */
+.contact-row{display:flex;gap:16px;flex-wrap:wrap;}
+
+/* Section helpers */
+.eyebrow-none{}
+.section{padding:96px 0;}
+.section.tight{padding:64px 0;}
+.on-bone{background:var(--bone);color:var(--ink);}
+.on-bone h1, .on-bone h2, .on-bone h3{color:var(--ink);}
+.on-bone .stone{color:#6B6455;}
+.stone{color:var(--stone);}
+
+.divider{height:1px;background:var(--line);border:none;margin:0;}

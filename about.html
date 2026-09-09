@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Caesars Realty</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .about-hero{display:grid;grid-template-columns:1fr 1fr;min-height:480px;}
+  .about-copy{padding:100px 64px 60px 32px;display:flex;flex-direction:column;justify-content:center;max-width:520px;}
+  .about-copy h1{font-size:2.6rem;}
+  .about-copy p.lead{color:var(--stone);margin-top:22px;font-size:1.02rem;}
+  .about-img{overflow:hidden;}
+  .about-img img{width:100%;height:100%;object-fit:cover;min-height:480px;}
+
+  .values{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);margin-top:16px;}
+  .value-card{background:var(--ink);padding:36px;}
+  .value-card h3{font-size:1.1rem;margin-bottom:12px;}
+  .value-card p{color:var(--stone);font-size:0.94rem;}
+
+  .team{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px;}
+  .team-card{border:1px solid var(--line);}
+  .team-card .thumb{height:260px;overflow:hidden;}
+  .team-card .thumb img{width:100%;height:100%;object-fit:cover;}
+  .team-body{padding:22px;}
+  .team-body h4{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--white);}
+  .team-body span{display:block;color:var(--gold-soft);font-size:0.8rem;margin-top:4px;}
+  .team-body p{color:var(--stone);font-size:0.88rem;margin-top:10px;}
+
+  .office-strip{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);margin-top:56px;}
+  .office-panel{background:var(--ink);padding:48px;}
+  .office-panel h3{font-size:1.3rem;margin-bottom:16px;}
+  .office-panel p{color:var(--stone);font-size:0.95rem;line-height:1.7;}
+  .office-img{min-height:100%;overflow:hidden;}
+  .office-img img{width:100%;height:100%;object-fit:cover;min-height:340px;}
+
+  @media (max-width:900px){
+    .about-hero{grid-template-columns:1fr;}
+    .about-copy{padding:48px 24px;}
+    .about-copy h1{font-size:2rem;}
+    .values{grid-template-columns:1fr;}
+    .team{grid-template-columns:1fr;}
+    .office-strip{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">Caesars Realty<small>KARACHI PROPERTY ADVISORS</small></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="listings.html">Listings</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn" href="tel:+923168940063">Call</a>
+      <a class="btn solid" href="https://wa.me/923168940063" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+</nav>
+
+<section class="about-hero">
+  <div class="about-copy">
+    <h1>Built as a small team, on purpose.</h1>
+    <p class="lead">Caesars Realty runs out of one office on Shahra-e-Faisal instead of a network of branches. That's a choice — it means the person you speak to on your first call is the one who sees your file through to registry.</p>
+  </div>
+  <div class="about-img">
+    <img src="https://images.pexels.com/photos/19046330/pexels-photo-19046330/free-photo-of-modern-office-building.jpeg?auto=compress&w=1000&h=1200&dpr=1" alt="Modern office building facade">
+  </div>
+</section>
+
+<div class="wrap section">
+  <h2 style="font-size:1.9rem;max-width:480px;">What guides how we work</h2>
+  <div class="values">
+    <div class="value-card">
+      <h3>We visit before we list</h3>
+      <p>No property goes up on our site until someone from our team has physically walked it and checked the paperwork.</p>
+    </div>
+    <div class="value-card">
+      <h3>We say the honest number</h3>
+      <p>If a unit is overpriced for its area, we tell you before you waste a visit — even if that means a smaller commission for us.</p>
+    </div>
+    <div class="value-card">
+      <h3>We stay past the signature</h3>
+      <p>Transfer, registry and possession are handled by us, not handed off once the deposit clears.</p>
+    </div>
+    <div class="value-card">
+      <h3>We know our streets</h3>
+      <p>Clifton, DHA, Cantonment, Shahra-e-Faisal — we work these corridors daily, not the whole city thinly.</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap" style="padding-bottom:100px;">
+  <h2 style="font-size:1.9rem;">How the team is split</h2>
+  <div class="team">
+    <div class="team-card" style="padding:28px;">
+      <h4 style="font-family:'Fraunces',serif;font-size:1.05rem;color:var(--white);">Lead Advisor — Residential</h4>
+      <span style="display:block;color:var(--gold-soft);font-size:0.8rem;margin-top:4px;">DHA &amp; Clifton</span>
+      <p style="color:var(--stone);font-size:0.88rem;margin-top:10px;">Handles apartment and villa sales across DHA phases and Clifton blocks.</p>
+    </div>
+    <div class="team-card" style="padding:28px;">
+      <h4 style="font-family:'Fraunces',serif;font-size:1.05rem;color:var(--white);">Commercial Lead</h4>
+      <span style="display:block;color:var(--gold-soft);font-size:0.8rem;margin-top:4px;">Shahra-e-Faisal Corridor</span>
+      <p style="color:var(--stone);font-size:0.88rem;margin-top:10px;">Retail, office and mixed-use commercial deals along the main corridor.</p>
+    </div>
+    <div class="team-card" style="padding:28px;">
+      <h4 style="font-family:'Fraunces',serif;font-size:1.05rem;color:var(--white);">Client Relations</h4>
+      <span style="display:block;color:var(--gold-soft);font-size:0.8rem;margin-top:4px;">Viewings &amp; Documentation</span>
+      <p style="color:var(--stone);font-size:0.88rem;margin-top:10px;">Schedules visits and manages transfer paperwork through to registry.</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="office-strip">
+    <div class="office-panel">
+      <h3>Visit the office</h3>
+      <p>
+        Office #805, 8th Floor, Caesars Tower,<br>
+        Main Shahra-e-Faisal, Opp. Aisha Bawany Academy,<br>
+        Karachi Cantonment, Fowler Lines, Karachi, Pakistan
+      </p>
+      <p style="margin-top:18px;">+92 316 8940063<br>Open Monday–Saturday, 11am–7pm</p>
+      <div class="contact-row" style="margin-top:24px;">
+        <a class="btn solid" href="https://wa.me/923168940063" target="_blank">WhatsApp Us</a>
+        <a class="btn" href="tel:+923168940063">Call Now</a>
+      </div>
+    </div>
+    <div class="office-img">
+      <img src="https://images.pexels.com/photos/2467168/pexels-photo-2467168.jpeg?auto=compress&w=900&h=1100&dpr=1" alt="High-rise office tower exterior">
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>CAESARS REALTY</h4>
+        <p style="max-width:320px;">Office #805, 8th Floor, Caesars Tower, Main Shahra-e-Faisal, Opp. Aisha Bawany Academy, Karachi Cantonment, Fowler Lines, Karachi, Pakistan.</p>
+      </div>
+      <div>
+        <h4>CONTACT</h4>
+        <a href="tel:+923168940063">+92 316 8940063</a>
+        <a href="https://wa.me/923168940063" target="_blank">WhatsApp Chat</a>
+      </div>
+      <div>
+        <h4>PAGES</h4>
+        <a href="index.html">Home</a>
+        <a href="listings.html">Listings</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Caesars Realty, Karachi.</span>
+      <span>Fowler Lines, Karachi Cantonment</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

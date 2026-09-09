@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caesars Realty — Karachi Property Advisors</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .hero{
+    position:relative;
+    display:grid;grid-template-columns:1.05fr 0.95fr;
+    align-items:stretch;
+    min-height:640px;
+  }
+  .hero-copy{
+    padding:100px 64px 80px 32px;
+    display:flex;flex-direction:column;justify-content:center;
+    max-width:560px;
+  }
+  .hero-copy h1{font-size:3.1rem;line-height:1.08;}
+  .hero-copy .gold-word{color:var(--gold-soft);}
+  .hero-copy p.lead{margin-top:24px;font-size:1.06rem;color:var(--stone);max-width:460px;}
+  .hero-img{
+    position:relative;overflow:hidden;
+    background:#0a0f1a;
+  }
+  .hero-img img{width:100%;height:100%;object-fit:cover;min-height:640px;}
+  .hero-img::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(90deg, var(--ink) 0%, rgba(14,21,36,0.05) 22%);
+  }
+  .hero-address{
+    margin-top:36px;padding-top:24px;border-top:1px solid var(--line);
+    font-size:0.9rem;color:var(--stone);max-width:420px;
+  }
+  .hero-address strong{color:var(--white);font-weight:500;display:block;margin-bottom:6px;font-family:'Fraunces',serif;font-size:1rem;}
+  .hero-cta{margin-top:36px;}
+
+  /* stat strip */
+  .stats{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .stats div{
+    padding:36px 32px;border-right:1px solid var(--line);
+  }
+  .stats div:last-child{border-right:none;}
+  .stats .num{font-family:'Fraunces',serif;font-size:2.1rem;color:var(--gold-soft);}
+  .stats .lbl{font-size:0.82rem;color:var(--stone);margin-top:6px;}
+
+  /* value props */
+  .props{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:56px;}
+  .prop-card{background:var(--ink);padding:40px 36px;}
+  .prop-card .mark{color:var(--gold-soft);font-family:'Fraunces',serif;font-size:1.4rem;margin-bottom:18px;display:block;}
+  .prop-card h3{font-size:1.15rem;margin-bottom:12px;}
+  .prop-card p{color:var(--stone);font-size:0.94rem;}
+
+  /* listings preview */
+  .listing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px;}
+  .listing-card{background:var(--ink-2);border:1px solid var(--line);}
+  .listing-card .thumb{height:220px;overflow:hidden;}
+  .listing-card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+  .listing-card:hover .thumb img{transform:scale(1.05);}
+  .listing-body{padding:22px 24px 26px;}
+  .listing-tag{font-size:0.72rem;letter-spacing:0.08em;color:var(--gold-soft);margin-bottom:10px;}
+  .listing-body h3{font-size:1.08rem;margin-bottom:8px;}
+  .listing-body p.loc{color:var(--stone);font-size:0.86rem;margin-bottom:14px;}
+  .listing-price{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--white);border-top:1px solid var(--line);padding-top:14px;margin-top:4px;display:flex;justify-content:space-between;align-items:center;}
+  .listing-price span.small{font-size:0.78rem;color:var(--stone);font-family:'Inter';}
+
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;}
+  .section-head p.stone{max-width:440px;}
+
+  /* process */
+  .process{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;position:relative;}
+  .process::before{content:'';position:absolute;top:19px;left:5%;right:5%;height:1px;background:var(--line);}
+  .step{position:relative;padding-right:24px;}
+  .step .dot{width:38px;height:38px;border:1px solid var(--gold);color:var(--gold-soft);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;background:var(--ink);position:relative;z-index:2;}
+  .step h4{margin-top:18px;font-size:1rem;color:var(--white);font-family:'Fraunces',serif;font-weight:500;}
+  .step p{color:var(--stone);font-size:0.88rem;margin-top:8px;}
+
+  /* testimonial */
+  .testi{
+    background:var(--bone);color:var(--ink);
+    padding:80px 0;
+  }
+  .testi-inner{max-width:720px;margin:0 auto;text-align:left;}
+  .testi blockquote{font-family:'Fraunces',serif;font-size:1.6rem;line-height:1.4;font-weight:400;margin:0;color:var(--ink);}
+  .testi cite{display:block;margin-top:24px;font-style:normal;font-size:0.88rem;color:#6B6455;}
+
+  /* final CTA */
+  .cta-band{
+    background:var(--ink-2);border:1px solid var(--line);
+    padding:56px;display:flex;justify-content:space-between;align-items:center;gap:32px;margin-top:110px;
+  }
+  .cta-band h2{font-size:1.7rem;max-width:460px;}
+
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;}
+    .hero-img{order:-1;min-height:340px;}
+    .hero-img img{min-height:340px;}
+    .hero-copy{padding:48px 24px;max-width:100%;}
+    .hero-copy h1{font-size:2.2rem;}
+    .stats{grid-template-columns:repeat(2,1fr);}
+    .stats div{border-bottom:1px solid var(--line);}
+    .props{grid-template-columns:1fr;}
+    .listing-grid{grid-template-columns:1fr;}
+    .process{grid-template-columns:1fr;gap:28px;}
+    .process::before{display:none;}
+    .cta-band{flex-direction:column;text-align:center;padding:40px 24px;}
+    .foot-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">Caesars Realty<small>KARACHI PROPERTY ADVISORS</small></a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="listings.html">Listings</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn" href="tel:+923168940063">Call</a>
+      <a class="btn solid" href="https://wa.me/923168940063" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-copy">
+    <h1>Property advice for<br>people who don't have<br>time to get it wrong.</h1>
+    <p class="lead">We help buyers, sellers and investors move through Karachi's residential and commercial market with a small team, straight numbers, and a Shahra-e-Faisal office you can actually walk into.</p>
+    <div class="hero-cta contact-row">
+      <a class="btn solid" href="https://wa.me/923168940063" target="_blank">Chat on WhatsApp</a>
+      <a class="btn" href="listings.html">View Listings</a>
+    </div>
+    <div class="hero-address">
+      <strong>Visit the office</strong>
+      Office #805, 8th Floor, Caesars Tower, Main Shahra-e-Faisal,<br>
+      Opp. Aisha Bawany Academy, Karachi Cantonment, Fowler Lines, Karachi<br>
+      +92 316 8940063
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="https://images.pexels.com/photos/2497637/pexels-photo-2497637.jpeg?auto=compress&w=1200&h=1400&dpr=1" alt="Modern apartment building facade">
+  </div>
+</section>
+
+<div class="stats">
+  <div><div class="num">11+</div><div class="lbl">Years combined market experience</div></div>
+  <div><div class="num">180+</div><div class="lbl">Properties closed</div></div>
+  <div><div class="num">6</div><div class="lbl">Areas actively covered</div></div>
+  <div><div class="num">24hr</div><div class="lbl">Average response time</div></div>
+</div>
+
+<section class="section wrap">
+  <div class="section-head">
+    <h2 style="font-size:2rem;max-width:420px;">Why clients work with us before anyone else</h2>
+    <p class="stone">No mass-listing spam, no vague promises — every property we bring you has been checked, and every price we quote is one you'll still see when you show up.</p>
+  </div>
+
+  <div class="props">
+    <div class="prop-card">
+      <span class="mark">01</span>
+      <h3>Verified listings only</h3>
+      <p>Every unit is physically visited by our team before it goes on the list — ownership, papers, and current asking price confirmed.</p>
+    </div>
+    <div class="prop-card">
+      <span class="mark">02</span>
+      <h3>One point of contact</h3>
+      <p>You deal with one advisor from first call to final transfer, not a rotating call centre. That's the number above.</p>
+    </div>
+    <div class="prop-card">
+      <span class="mark">03</span>
+      <h3>Karachi-specific reads</h3>
+      <p>We work Clifton, DHA, Shahra-e-Faisal, and the Cantonment corridor daily — we know what a price actually means in each.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" style="padding-top:0;">
+  <div class="section-head">
+    <h2 style="font-size:2rem;">Featured listings</h2>
+    <a class="btn" href="listings.html">See all listings</a>
+  </div>
+
+  <div class="listing-grid">
+    <div class="listing-card">
+      <div class="thumb"><img src="https://images.pexels.com/photos/34135423/pexels-photo-34135423/free-photo-of-modern-apartment-building-at-sunset.jpeg?auto=compress&w=800&h=600&dpr=1" alt="Apartment building at sunset"></div>
+      <div class="listing-body">
+        <div class="listing-tag">FOR SALE — APARTMENT</div>
+        <h3>3-Bed Residence, DHA Phase 8</h3>
+        <p class="loc">Emaar Crescent Bay, DHA Phase 8, Karachi</p>
+        <div class="listing-price">PKR 9.9 Crore <span class="small">2,400 sq.ft</span></div>
+      </div>
+    </div>
+    <div class="listing-card">
+      <div class="thumb"><img src="https://images.pexels.com/photos/259593/pexels-photo-259593.jpeg?auto=compress&w=800&h=600&dpr=1" alt="Villa exterior with driveway"></div>
+      <div class="listing-body">
+        <div class="listing-tag">FOR RENT — HOUSE</div>
+        <h3>5-Bed Villa, DHA Phase 6</h3>
+        <p class="loc">Darakhshan, DHA Phase 6, Karachi</p>
+        <div class="listing-price">PKR 3.0 Lakh <span class="small">/ month</span></div>
+      </div>
+    </div>
+    <div class="listing-card">
+      <div class="thumb"><img src="https://images.pexels.com/photos/2497641/pexels-photo-2497641.jpeg?auto=compress&w=800&h=600&dpr=1" alt="Modern commercial building facade"></div>
+      <div class="listing-body">
+        <div class="listing-tag">FOR SALE — COMMERCIAL</div>
+        <h3>Ground Floor Retail Space</h3>
+        <p class="loc">Al Murtaza Commercial, DHA Phase 8</p>
+        <div class="listing-price">PKR 9.0 Crore <span class="small">900 sq.ft</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section on-bone">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 style="font-size:2rem;max-width:420px;">Fees, in plain terms</h2>
+      <p class="stone">Standard Karachi market rates — we quote the exact figure on your file before you sign anything.</p>
+    </div>
+    <div class="props" style="background:var(--line);margin-top:40px;">
+      <div class="prop-card" style="background:var(--bone);">
+        <span class="mark" style="color:#8a6d3b;">Buying</span>
+        <h3 style="color:var(--ink);">1% of sale price</h3>
+        <p style="color:#6B6455;">Paid on completion, standard across Karachi agencies. Covers shortlisting, visits and paperwork support through to transfer.</p>
+      </div>
+      <div class="prop-card" style="background:var(--bone);">
+        <span class="mark" style="color:#8a6d3b;">Selling</span>
+        <h3 style="color:var(--ink);">1% of sale price</h3>
+        <p style="color:#6B6455;">Includes listing, photography, buyer screening and negotiation. No upfront fee — we're paid when the deal closes.</p>
+      </div>
+      <div class="prop-card" style="background:var(--bone);">
+        <span class="mark" style="color:#8a6d3b;">Renting</span>
+        <h3 style="color:var(--ink);">1 month's rent</h3>
+        <p style="color:#6B6455;">Split between landlord and tenant per market norm, due once the lease is signed and keys change hands.</p>
+      </div>
+    </div>
+    <p class="stone" style="margin-top:28px;font-size:0.86rem;max-width:600px;">These are typical Karachi market rates and can vary by property type or deal size — your advisor confirms the final figure in writing before any commitment.</p>
+  </div>
+</section>
+
+<section class="section wrap" style="padding-top:0;">
+  <div class="section-head">
+    <h2 style="font-size:2rem;max-width:420px;">Areas we work in</h2>
+    <p class="stone">We'd rather cover fewer areas properly than spread thin across the whole city.</p>
+  </div>
+  <div class="props">
+    <div class="prop-card">
+      <h3>DHA, Phases 2–8</h3>
+      <p>Villas, bungalows and new-build apartment towers across the Defence corridor.</p>
+    </div>
+    <div class="prop-card">
+      <h3>Clifton</h3>
+      <p>High-rise apartments and commercial units along Block 1–9.</p>
+    </div>
+    <div class="prop-card">
+      <h3>Shahra-e-Faisal &amp; Cantonment</h3>
+      <p>Commercial floors, retail space and residential plots near our own office corridor.</p>
+    </div>
+    <div class="prop-card">
+      <h3>Bahria Town Karachi</h3>
+      <p>Gated-community houses and apartment blocks for end-users and investors.</p>
+    </div>
+    <div class="prop-card">
+      <h3>PECHS &amp; Jamshed Town</h3>
+      <p>Mid-rise flats and older bungalows with renovation or redevelopment potential.</p>
+    </div>
+    <div class="prop-card">
+      <h3>Malir Cantonment</h3>
+      <p>Askari sector apartments and family homes on Cantonment lease land.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" style="padding-top:0;">
+  <h2 style="font-size:2rem;">How a deal moves with us</h2>
+  <div class="process">
+    <div class="step">
+      <div class="dot">1</div>
+      <h4>Brief</h4>
+      <p>Call or WhatsApp us your budget, area and timeline — takes about ten minutes.</p>
+    </div>
+    <div class="step">
+      <div class="dot">2</div>
+      <h4>Shortlist</h4>
+      <p>We send verified options within 48 hours, with real photos and current pricing.</p>
+    </div>
+    <div class="step">
+      <div class="dot">3</div>
+      <h4>Visit</h4>
+      <p>We accompany every site visit — at the property or here at Caesars Tower.</p>
+    </div>
+    <div class="step">
+      <div class="dot">4</div>
+      <h4>Close</h4>
+      <p>Paperwork, transfer and registry handled with our in-house legal contact.</p>
+    </div>
+  </div>
+</section>
+
+<section class="testi">
+  <div class="wrap testi-inner">
+    <blockquote>"They walked us through the DHA 8 unit twice before we signed anything, and flagged a title issue another agent hadn't mentioned. That's the whole reason we came back for the second purchase."</blockquote>
+    <cite>— Client, DHA Phase 8 apartment purchase</cite>
+  </div>
+</section>
+
+<section class="wrap section" style="padding-top:0;">
+  <h2 style="font-size:2rem;max-width:420px;">Common questions</h2>
+  <div class="props" style="margin-top:40px;">
+    <div class="prop-card">
+      <h3>Do I pay anything upfront?</h3>
+      <p>No. Our fee is only due once a sale, purchase or rental actually closes — not for shortlisting or visits.</p>
+    </div>
+    <div class="prop-card">
+      <h3>Can you handle the transfer and registry?</h3>
+      <p>Yes, we coordinate the transfer paperwork and registry process with our in-house legal contact once terms are agreed.</p>
+    </div>
+    <div class="prop-card">
+      <h3>Do you only deal in DHA and Clifton?</h3>
+      <p>Those are our busiest areas, but we also actively work Bahria Town, PECHS, Jamshed Town and the Cantonment corridor.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="cta-band">
+    <h2>Have a property in mind, or one to sell?</h2>
+    <div class="contact-row">
+      <a class="btn solid" href="https://wa.me/923168940063" target="_blank">Message us on WhatsApp</a>
+      <a class="btn" href="tel:+923168940063">+92 316 8940063</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>CAESARS REALTY</h4>
+        <p style="max-width:320px;">Office #805, 8th Floor, Caesars Tower, Main Shahra-e-Faisal, Opp. Aisha Bawany Academy, Karachi Cantonment, Fowler Lines, Karachi, Pakistan.</p>
+      </div>
+      <div>
+        <h4>CONTACT</h4>
+        <a href="tel:+923168940063">+92 316 8940063</a>
+        <a href="https://wa.me/923168940063" target="_blank">WhatsApp Chat</a>
+      </div>
+      <div>
+        <h4>PAGES</h4>
+        <a href="index.html">Home</a>
+        <a href="listings.html">Listings</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Caesars Realty, Karachi.</span>
+      <span>Fowler Lines, Karachi Cantonment</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
