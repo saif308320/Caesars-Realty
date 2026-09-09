@@ -52,6 +52,9 @@
       <a class="btn" href="tel:+923168940063">Call</a>
       <a class="btn solid" href="https://wa.me/923168940063" target="_blank">WhatsApp</a>
     </div>
+    <button class="mobile-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </div>
 </nav>
 
@@ -158,6 +161,15 @@
     var url = "https://wa.me/923168940063?text=" + encodeURIComponent(text);
     window.open(url, "_blank");
   });
+
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(){
+      var isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+  }
 </script>
 
 </body>
